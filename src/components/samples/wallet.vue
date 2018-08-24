@@ -382,7 +382,7 @@ $.ajax({
 			},
 			sendJSE: {
 				CURL: `
-curl -v -X GET https://api.jsecoin.com/v1.7/transfer/charity@jsecoin.com/0.001/DonatingToCharity/ \\
+curl -v -X GET https://api.jsecoin.com/v1.7/transfer/auth/charity@jsecoin.com/0.001/DonatingToCharity/ \\
 -H "Content-Type: application/json" \\
 -H "Authorization: JSE API Key"
 `,
