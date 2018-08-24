@@ -40,6 +40,22 @@
 				<div class="apiOverview">
 					<div class="apiOverviewContent">
 						<a name="GetBalance" id="GetBalance"></a>
+						<h4>Wrappers</h4>
+						<p>
+							We are putting together some sample wrapper examples:
+							<ul>
+								<li><a href="/static/wrappers/php/phpwrapper.zip">PHP</a></li>
+								<li>More coming soon...</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<div class="apiOverview">
+					<div class="apiOverviewContent">
+						<a name="GetBalance" id="GetBalance"></a>
 						<h4>Balance</h4>
 						<p>
 							Retrieve your JSE account balance total or by website earnings.
