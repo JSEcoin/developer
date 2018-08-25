@@ -40,13 +40,13 @@
 				<div class="apiOverview">
 					<div class="apiOverviewContent">
 						<a name="GetBalance" id="GetBalance"></a>
-						<h4>Wrappers</h4>
+						<h4>PHP Developers</h4>
 						<p>
-							We are putting together some sample wrapper examples:
+							For developing in PHP we recommend using the PHP wrapper class available from:
 							<ul>
-								<li><a href="/static/wrappers/php/phpwrapper.zip">PHP</a></li>
-								<li>More coming soon...</li>
+								<li><a href="https://jsecoin.com/downloads#scripts" target="_blank">https://jsecoin.com/downloads#scripts</a></li>
 							</ul>
+							Examples are available in the source code.
 						</p>
 					</div>
 				</div>
