@@ -40,6 +40,22 @@
 				<div class="apiOverview">
 					<div class="apiOverviewContent">
 						<a name="GetBalance" id="GetBalance"></a>
+						<h4>Wrappers</h4>
+						<p>
+							We are putting together some sample wrapper examples:
+							<ul>
+								<li><a href="/static/wrappers/php/phpwrapper.zip">PHP</a></li>
+								<li>More coming soon...</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<div class="apiOverview">
+					<div class="apiOverviewContent">
+						<a name="GetBalance" id="GetBalance"></a>
 						<h4>Balance</h4>
 						<p>
 							Retrieve your JSE account balance total or by website earnings.
@@ -399,7 +415,7 @@ $.ajax({
 			},
 			sendJSE: {
 				CURL: `
-curl -v -X GET https://api.jsecoin.com/v1.7/transfer/charity@jsecoin.com/0.001/DonatingToCharity/ \\
+curl -v -X GET https://api.jsecoin.com/v1.7/transfer/auth/charity@jsecoin.com/0.001/DonatingToCharity/ \\
 -H "Content-Type: application/json" \\
 -H "Authorization: JSE API Key"
 `,
