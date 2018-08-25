@@ -133,7 +133,6 @@
 				</div>
 			</div>
 
-
 			<div class="section">
 				<div class="apiOverview">
 					<div class="apiOverviewContent">
@@ -150,6 +149,24 @@
 </code></pre>
 				</div>
 			</div>
+
+			<div class="section">
+				<div class="apiOverview">
+					<div class="apiOverviewContent">
+						<a name="CheckEmail" id="CheckEmail"></a>
+						<h4>Check Email</h4>
+						<p>
+							Check if an email exists on the platform.
+						</p>
+					</div>
+				</div>
+				<div class="apiSample">
+					<h4>Email look up query</h4>
+<pre v-highlightjs="checkEmail[codeBase]"><code :class="lang">
+</code></pre>
+				</div>
+			</div>
+
 		</article>
 	</div>
 </template>
@@ -544,6 +561,62 @@ $.ajax({
   console.log(balance);
 });`,
 			},
+
+			checkEmail: {
+				CURL: `
+curl -v -X GET https://api.jsecoin.com/v1.7/checkemail/test@jsecoin.com/auth/ \\
+-H "Content-Type: application/json" \\
+-H "Authorization: JSE API Key"
+`,
+				NodeJS: `
+const axios = require('axios');
+
+const APIEndPoint = 'https://api.jsecoin.com/v1.7/checkemail/test@jsecoin.com/auth/';
+
+axios({
+  method: 'GET',
+  url: APIEndPoint,
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'JSE API KEY',
+  },
+}).then((response) => {
+  console.log(response.data);
+}).catch((error) => {
+  console.log(error);
+});
+`,
+				VanillaJS: `
+const APIEndPoint = 'https://api.jsecoin.com/v1.7/checkemail/test@jsecoin.com/auth/';
+
+fetch(APIEndPoint, {
+  cache: 'no-cache',
+  method: 'GET',
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'JSE API Key'
+  },
+}).then((response) => {
+  return response.json();
+}).catch((error) => {
+  console.error('Error:', error)
+}).then((balance) => {
+  console.log('Success:', balance);
+});`,
+				JQuery: `
+$.ajax({
+  url:'https://api.jsecoin.com/v1.7/checkemail/test@jsecoin.com/auth/', 
+  headers: { 
+    'Authorization': 'JSE API Key' 
+  }, 
+  type:'GET'
+}).done(function(response) {
+  console.log(response);
+});
+`,
+			},
+
 		};
 	},
 	methods: {

@@ -468,6 +468,7 @@ curl -v -X GET https://api.jsecoin.com/v1.7/checkpublickey/0463c009ecaba659607fe
 						</div>
 					</div>
 					<!-- xCHECK PUBLIC KEY -->
+
 		</article>
 	</div>
 </template>

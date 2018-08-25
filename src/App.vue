@@ -96,6 +96,11 @@
 																Mining
 															</router-link>
 														</li>
+														<li>
+															<router-link v-bind:to="`/API/wallet#CheckEmail`" tag="a" v-on:click.native="scrollTo('CheckEmail');">
+																Check Email
+															</router-link>
+														</li>
 													</ul>
 												</li>
 												<li>
@@ -258,7 +263,12 @@
 														<router-link v-bind:to="`/samples/wallet/#MiningTransactions`" tag="a" v-on:click.native="scrollTo('MiningTransactions');">
 															Mining Transactions
 														</router-link>								
-													</li>												
+													</li>
+													<li>
+														<router-link v-bind:to="`/samples/wallet/#CheckEmail`" tag="a" v-on:click.native="scrollTo('CheckEmail');">
+															Check Email
+														</router-link>								
+													</li>						
 												</ul>							
 											</li>
 											<li>
@@ -287,6 +297,11 @@
 														</router-link>									
 													</li>											
 												</ul>							
+											</li>
+											<li>
+												<a href="https://jsecoin.com/downloads#scripts" target="_blank">
+													PHP Wrapper Class
+												</a>
 											</li>
 										</ul>
 									</li>

@@ -606,6 +606,90 @@ curl -v -X GET https://api.jsecoin.com/v1.7/mining/auth/ \
 						</div>
 					</div>
 					<!-- xMINING -->
+
+
+					<!-- CHECK EMAIL -->
+					<div class="section">
+						<div class="apiOverview">
+							<div class="apiOverviewContent">
+								<a name="CheckEmail" id="CheckEmail"></a>
+								<h2>Check Email</h2>
+								
+								<div class="verbpath">
+									<span class="verb get">GET</span>
+									<span class="path">/v1.7/checkemail/<wbr>{:email}/auth/</span>
+								</div>
+								
+								<p>
+									Returns the public key, user id and balance of an associated email.
+								</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="section">
+						<div class="apiOverview">
+							<div class="apiOverviewContent">
+								<h4>Path Params</h4>
+								
+								<dl>
+									<dt>
+										<b><code>:email</code></b>
+										<span class="type">string</span>
+										<span class="required">required</span>
+									</dt>
+									<dd>
+										Users email to query against.
+									</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="apiSample">
+							<h4>Sample Request</h4>
+							
+<pre v-highlightjs><code class="bash">
+curl -v -X GET https://api.jsecoin.com/v1.7/checkemail/test@jsecoin.com/auth/ \
+-H "Content-Type: application/json" \
+-H "Authorization: JSE API Key"
+</code></pre>
+						</div>
+					</div>
+
+					<div class="section">
+						<div class="apiOverview">
+							<div class="apiOverviewContent">
+								<h4>Response</h4>
+								
+								<p>
+									A successful request returns the HTTP 200 OK status code and a JSON response body and the user id, public key and their balance.
+								</p>
+
+							</div>
+						</div>
+						<div class="apiSample">
+							<h4>Sample Response</h4>
+							
+<pre v-highlightjs><code class="json">
+{
+  "success": 1, 
+  "uid": 5, 
+  "publicKey": "0433936a1ce4a7412444aa5e759a65e48855353691dd35bcb2397f9e2644718e640eb1190a7cdbc6d00d66de664c443279cdb2cc53c3c94042cdccc32b804911a2", 
+  "balance": 33.205
+}
+</code></pre>
+
+						</div>
+					</div>
+					<!-- xCHECK EMAIL -->
+
+
+
+
+
+
+
+
+
 		</article>
 	</div>
 </template>
