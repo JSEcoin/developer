@@ -235,11 +235,15 @@ curl -v -X GET https://api.jsecoin.com/v1.7/getblock/12345/auth/ \
 									</dt>
 									<dd>
 										Total results to page by.
+										<br>
+										Number of results per page.
 									</dd>
 									<dt>
 										<b><code>:pageNo</code></b>
 										<span class="type">int</span>
 										<span class="optional">optional - requires :pageBy</span>
+										<br>
+										Page number i.e. pageBy = 50, pageNo = 3 will display results 100-150
 									</dt>
 									<dt>
 										<b><code>sortBy</code></b>
