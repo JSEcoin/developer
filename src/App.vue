@@ -50,6 +50,11 @@
 															Miner Code
 														</router-link>								
 													</li>
+													<li>
+														<router-link v-bind:to="`/API/#Captcha`" tag="a" v-on:click.native="scrollTo('Captcha');">
+															Captcha
+														</router-link>
+													</li>
 												</ul>
 											</li>
 										</ul>

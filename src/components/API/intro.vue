@@ -156,9 +156,6 @@
 					</div>
 				</div>
 
-
-
-
 				<div class="apiSample">
 					<h4>Sample Generated Webmaster Code</h4>
 
@@ -183,6 +180,101 @@
 &lt;script src="https://load.jsecoin.com/load/2895/jsecoin.com/optionalSubID/0/" async defer&gt;&lt;/script&gt;
 </code></pre>
 				</div>
+			</div>
+
+			<!-- Captcha Code -->
+			<div class="section">
+				<div class="apiOverview">
+					<div class="apiOverviewContent">
+						<a name="Captcha" id="Captcha"></a>				
+						<h2>
+							Captcha
+						</h2>
+						<p>
+							The JSE Captcha is a free to use bot prevention tool. It can be used to protect content and endpoints from automated requests.
+						</p>
+						<p>
+							Setting up the captcha requires two parts, a code snippet on the web page and then a server-side verification check. A simple div element is placed in the HTML code for the web page. Standard CSS can be used to position as required. Then a external javascript call loads the code and renders the captcha inside the div.
+						</p>
+						<h5>Basic Client-Side Example (With Auto Center CSS)</h5>
+						<p>
+							The following example uses a inline css style tag to set center the captcha inside it's container. The style tag is not required but can be used to customise the captcha's placement as required.
+						</p>
+						<br>
+						<div class="verbpath">
+							<span class="verb get">SRC</span>
+							<span class="path">
+								&#x3C;div id=&#x22;JSE-captcha&#x22; style=&#x22;margin: 0px auto;&#x22;&#x3E;&#x3C;/div&#x3E;&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;https://api.jsecoin.com/captcha/load/captcha.js&#x22;&#x3E;&#x3C;/script&#x3E;
+							</span>
+						</div>
+
+						<h5>Server-side Verification</h5>
+						<p>
+							It is essential to check the captcha has been completed using server-side code to protect your endpoints. We do this using the clients IP address (IPV4) and the following URL:
+						</p>
+						<br>
+						<div class="verbpath">
+							<span class="verb get">SRC</span>
+							<span class="path">
+								https://api.jsecoin.com/captcha/check/:ipAddress/
+							</span>
+						</div>
+						<p>
+							Example JSON responses:
+							<hr style="color: #EEE;">
+							<div style="color: #C00;">
+								{"success":1,"rating":0,"pass":false,"knownIP":false, "ip":"148.252.129.187"}
+							</div>
+							<hr style="color: #EEE;">
+							<div style="color: #080;">
+								{"success":1,"rating":87,"pass":true,"knownIP":true, "ip":"148.252.129.187"}
+							</div>
+							<hr style="color: #EEE;">
+						</p>
+						<h5>Optional Javascript Check</h5>
+						<p>
+							It is also possible to run a javascript check to see if the captcha has been completed. This can be useful from a UX perspective before submitting a form for example but should not be used for security purposes.
+						</p>
+						<p>
+							The example below calls the JSECaptchaComplete function which is available globally and then fires the function name that is passed to it. In this example customFunction(); is called on the button click if the captcha has been completed. If not the captcha will simply flicker red a few times to prompt the user.
+						</p>
+						<br>
+						<div class="verbpath">
+							<span class="verb get">SRC</span>
+							<span class="path">
+								&#x3C;button onclick=&#x22;JSECaptchaComplete(&#x27;customFunction&#x27;);&#x22;&#x3E;Login&#x3C;/button&#x3E;
+							</span>
+						</div>
+					</div>
+
+				</div>
+						
+				<div class="apiSample">
+					<h4>Website Code</h4>
+					<pre v-highlightjs><code class="html">
+&#x3C;div id=&#x22;JSE-captcha&#x22; style=&#x22;margin: 0px auto;&#x22;&#x3E;&#x3C;/div&#x3E;&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;https://api.jsecoin.com/captcha/load/captcha.js&#x22;&#x3E;&#x3C;/script&#x3E;
+					</code></pre>
+
+					<h4>Example NodeJS Server-Side Check</h4>
+					<pre v-highlightjs><code class="nodejs">
+const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+const verificationUrl = `https://api.jsecoin.com/captcha/check/${ipAddress}/`;
+request(verificationUrl,function(errorRecaptcha,responseRecaptcha,bodyCaptchaRaw) {
+	const bodyCaptcha = JSON.parse(bodyCaptchaRaw);
+	if (bodyCaptcha.pass && bodyCaptcha.pass === true) {
+		doSomething();
+	}
+});
+					</code></pre>
+
+				</div>
+
+
+				<!-- END OF CAPTCHA -->
+
+
+
+
 			</div>
 			
 		</article>
