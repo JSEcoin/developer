@@ -5,6 +5,7 @@ import Router from 'vue-router';
 import introAPI from '@/components/API/intro';
 import walletAPI from '@/components/API/wallet';
 import blockchainAPI from '@/components/API/blockchain';
+import enterpriseAPI from '@/components/API/enterprise';
 import v17API from '@/components/API/v17';
 
 //Samples
@@ -40,6 +41,11 @@ export default new Router({
 			path: '/API/blockchain',
 			name: 'API Blockchain',
 			component: blockchainAPI,
+		},
+		{
+			path: '/API/enterprise',
+			name: 'API Enterprise',
+			component: enterpriseAPI,
 		},
 		{
 			path: '/releaseNotes/v17',

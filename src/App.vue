@@ -140,6 +140,24 @@
 														</li>
 													</ul>
 												</li>
+												<li>
+													<router-link v-bind:to="`/API/enterprise`" tag="a">
+														Enterprise
+													</router-link>
+													<ul>
+														<li>
+															<router-link v-bind:to="`/API/enterprise#IPCheck`" tag="a" v-on:click.native="scrollTo('IPCheck');">
+																IPCheck
+															</router-link>
+														</li>
+														<li>
+															<router-link v-bind:to="`/API/enterprise#SideChain`" tag="a" v-on:click.native="scrollTo('SideChain');">
+																SideChain
+															</router-link>
+														</li>
+													</ul>
+												</li>
+
 											</ul>
 										</ul>
 									</li>
