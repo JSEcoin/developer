@@ -231,7 +231,7 @@
 							</div>
 							<hr style="color: #EEE;">
 						</p>
-						<h5>Optional Javascript Check</h5>
+						<h5><i>Optional</i> Javascript Check Function</h5>
 						<p>
 							It is also possible to run a javascript check to see if the captcha has been completed. This can be useful from a UX perspective before submitting a form for example but should not be used for security purposes.
 						</p>
@@ -245,7 +245,29 @@
 								&#x3C;button onclick=&#x22;JSECaptchaComplete(&#x27;customFunction&#x27;);&#x22;&#x3E;Login&#x3C;/button&#x3E;
 							</span>
 						</div>
+						<h5><i>Optional</i> Javascript Event Notification</h5>
+						<p>
+							An event will be fired on completion of the captcha, this can be acted upon by setting up an event listener for "JSECaptchaPass". See example code below.
+						</p>
+						<pre v-highlightjs><code class="html">
+document.addEventListener(&#x22;JSECaptchaPass&#x22;, function(e) {
+  console.log(&#x27;Captcha completed by &#x27;+e.ip);
+}, false);
+						</code></pre>
+
+						<h5><i>Optional</i> Customisation CSS</h5>
+						<p>
+							There are a number of built in custom CSS modes including dark mode, large size, and shadow border. These can be used by simply adding a class name to the main JSE-captcha div code. See example below where they are combined. Additional custom styling can be made to the code by adding CSS to the relevant elements.
+						</p>
+						<pre v-highlightjs><code class="html">
+&#x3C;div id=&#x22;JSE-captcha&#x22; class=&#x22;JSE-captcha-dark JSE-captcha-large JSE-captcha-shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;https://api.jsecoin.com/captcha/load/captcha.js&#x22;&#x3E;&#x3C;/script&#x3E;
+						</code></pre>
+						<iframe style="width: 320px; height: 320px;" srcdoc="<html><body><div id='JSE-captcha' class='JSE-captcha-shadow JSE-captcha-large JSE-captcha-shadow'></div><script type='text/javascript' src='https://api.jsecoin.com/captcha/load/captcha.js'></script></body></html>"></iframe>
+						
+						<br>
 					</div>
+					
 
 				</div>
 						
