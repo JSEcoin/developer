@@ -159,26 +159,27 @@ curl -v -X GET https://api.jsecoin.com/enterprise/gethash/7FD4AD9D5E4E9823E67E10
 					<h4>GetHash Response</h4>
 <pre v-highlightjs><code class="json">
 {
-"success": 1, 
-"data": [
-	{ 
-	"tx": "156323464962248028",
-	"user1": 34636,
-	"hash": "7FD4AD9D5E4E9823E67E105F645CEE4A40C4948CB1BA41B7DA2C2D1204B385A0",
-	"ts": "1563234640341",
-	"blockID": 1057186
+"success": 1,
+"data": {
+	"1563485869423609893": {
+		"command": "sideChainHash",
+		"user1": 145,
+		"hash": "7FD4AD9D5E4E9823E67E105F645CEE4A40C4948CB1BA41B7DA2C2D1204B385A0",
+		"ts": 1563485869421,
+		"tx": "1563485869423609893"
 	},
-	{ 
-	"tx": "1563234708912365267",
-	"user1": 34636,
-	"hash": "7FD4AD9D5E4E9823E67E105F645CEE4A40C4948CB1BA41B7DA2C2D1204B385A0",
-	"ts": "1563234699886",
-	"blockID": 1057188
-	},
-],
-"hashes": 2,
-"firstSeen": "1563234640341",
-"lastSeen": "1563234699886"
+	"1563486422732102946": {
+		"command": "sideChainHash",
+		"user1": 145,
+		"hash": "7FD4AD9D5E4E9823E67E105F645CEE4A40C4948CB1BA41B7DA2C2D1204B385A0",
+		"ts": 1563486422728,
+		"blockID": 1065152,
+		"tx": "1563486422732102946"
+	}
+},
+"firstSeen": 1563485869421,
+"lastSeen": 1563486422728,
+"hashes": 0
 }
 </code></pre>
 				</div>
