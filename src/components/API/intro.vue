@@ -201,7 +201,7 @@
 							The following example uses a inline css style tag to set center the captcha inside it's container. The style tag is not required but can be used to customise the captcha's placement as required.
 						</p>
 						<br>
-						<div class="verbpath">
+						<div class="verbpath intro-container">
 							<span class="verb get">SRC</span>
 							<span class="path">
 								&#x3C;div id=&#x22;JSE-captcha&#x22; style=&#x22;margin: 0px auto;&#x22;&#x3E;&#x3C;/div&#x3E;&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;https://api.jsecoin.com/captcha/load/captcha.js&#x22;&#x3E;&#x3C;/script&#x3E;
@@ -213,7 +213,7 @@
 							It is essential to check the captcha has been completed using server-side code to protect your endpoints. We do this using the clients IP address (IPV4) and the following URL:
 						</p>
 						<br>
-						<div class="verbpath">
+						<div class="verbpath intro-container">
 							<span class="verb get">SRC</span>
 							<span class="path">
 								https://api.jsecoin.com/captcha/check/:ipAddress/
@@ -239,7 +239,7 @@
 							The example below calls the JSECaptchaComplete function which is available globally and then fires the function name that is passed to it. In this example customFunction(); is called on the button click if the captcha has been completed. If not the captcha will simply flicker red a few times to prompt the user.
 						</p>
 						<br>
-						<div class="verbpath">
+						<div class="verbpath intro-container">
 							<span class="verb get">SRC</span>
 							<span class="path">
 								&#x3C;button onclick=&#x22;JSECaptchaComplete(&#x27;customFunction&#x27;);&#x22;&#x3E;Login&#x3C;/button&#x3E;
@@ -249,7 +249,7 @@
 						<p>
 							An event will be fired on completion of the captcha, this can be acted upon by setting up an event listener for "JSECaptchaPass". See example code below.
 						</p>
-						<pre v-highlightjs><code class="html">
+						<pre v-highlightjs class="intro-container"><code class="html">
 document.addEventListener(&#x22;JSECaptchaPass&#x22;, function(e) {
   console.log(&#x27;Captcha completed by &#x27;+e.ip);
 }, false);
@@ -259,11 +259,11 @@ document.addEventListener(&#x22;JSECaptchaPass&#x22;, function(e) {
 						<p>
 							There are a number of built in custom CSS modes including dark mode, large size, and shadow border. These can be used by simply adding a class name to the main JSE-captcha div code. See example below where they are combined. Additional custom styling can be made to the code by adding CSS to the relevant elements.
 						</p>
-						<pre v-highlightjs><code class="html">
+						<pre v-highlightjs class="intro-container"><code class="html">
 &#x3C;div id=&#x22;JSE-captcha&#x22; class=&#x22;JSE-captcha-dark JSE-captcha-large JSE-captcha-shadow&#x22;&#x3E;&#x3C;/div&#x3E;
 &#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;https://api.jsecoin.com/captcha/load/captcha.js&#x22;&#x3E;&#x3C;/script&#x3E;
 						</code></pre>
-						<iframe style="width: 320px; height: 320px;" srcdoc="<html><body><div id='JSE-captcha' class='JSE-captcha-shadow JSE-captcha-large JSE-captcha-shadow'></div><script type='text/javascript' src='https://api.jsecoin.com/captcha/load/captcha.js'></script></body></html>"></iframe>
+						<iframe style="width: 320px; height: 320px;" srcdoc="<html><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><style>.btn { border: 0px; padding: 5px 15px; border-radius: 8px; color: #fff; background: #2c98fe; cursor: pointer; margin: 5px; }</style><body><div id='JSE-captcha' class='JSE-captcha-dark JSE-captcha-large JSE-captcha-shadow'></div><script type='text/javascript' src='https://api.jsecoin.com/captcha/load/captcha.js'></script><br><button class='btn' onclick='$(`#JSE-captcha`).toggleClass(`JSE-captcha-dark`);'>Toggle Dark Mode</button><br><button class='btn' onclick='$(`#JSE-captcha`).toggleClass(`JSE-captcha-large`);'>Toggle Large Mode</button><br><button class='btn' onclick='$(`#JSE-captcha`).toggleClass(`JSE-captcha-shadow`);'>Toggle Shadow Mode</button></body></html>"></iframe>
 						
 						<br>
 					</div>
@@ -273,12 +273,12 @@ document.addEventListener(&#x22;JSECaptchaPass&#x22;, function(e) {
 						
 				<div class="apiSample">
 					<h4>Website Code</h4>
-					<pre v-highlightjs><code class="html">
+					<pre v-highlightjs class="intro-container"><code class="html">
 &#x3C;div id=&#x22;JSE-captcha&#x22; style=&#x22;margin: 0px auto;&#x22;&#x3E;&#x3C;/div&#x3E;&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;https://api.jsecoin.com/captcha/load/captcha.js&#x22;&#x3E;&#x3C;/script&#x3E;
 					</code></pre>
 
 					<h4>Example NodeJS Server-Side Check</h4>
-					<pre v-highlightjs><code class="nodejs">
+					<pre v-highlightjs class="intro-container"><code class="nodejs">
 const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
 const verificationUrl = `https://api.jsecoin.com/captcha/check/${ipAddress}/`;
 request(verificationUrl,function(errorRecaptcha,responseRecaptcha,bodyCaptchaRaw) {
@@ -311,4 +311,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.intro-container {
+	max-width: 500px;
+	overflow: auto;
+}
 </style>
