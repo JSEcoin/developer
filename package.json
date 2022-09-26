@@ -74,7 +74,7 @@
     "phantomjs-prebuilt": "^2.1.15",
     "chromedriver": "^2.33.1",
     "cross-spawn": "^5.1.0",
-    "nightwatch": "^0.9.16",
+    "nightwatch": "^2.3.9",
     "selenium-server": "^3.6.0",
     "semver": "^5.4.1",
     "shelljs": "^0.7.8",
